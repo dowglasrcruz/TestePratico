@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "58f25e87-30ea-4733-8cbf-249345baef01",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27232578",
+		"_collection_link": "https://lively-escape-722656.postman.co/workspace/Team-Workspace~2f812e5c-1773-451c-8251-f250ac95858d/collection/27232578-58f25e87-30ea-4733-8cbf-249345baef01?action=share&creator=27232578&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"pm.collectionVariables.set(\"cepp\",\"001\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Uberaba\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.not.include(\"INVÁLIDO\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<x:Envelope\r\n    xmlns:x=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n    xmlns:cli=\"http://cliente.bean.master.sigep.bsb.correios.com.br/\">\r\n    <x:Header/>\r\n    <x:Body>\r\n        <cli:consultaCEP>\r\n            <cep>{{cep}}{{cepp}}</cep>\r\n        </cli:consultaCEP>\r\n    </x:Body>\r\n</x:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente",
+					"protocol": "https",
+					"host": [
+						"apps",
+						"correios",
+						"com",
+						"br"
+					],
+					"path": [
+						"SigepMasterJPA",
+						"AtendeClienteService",
+						"AtendeCliente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
