@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="base-project-web-qastudio" />
+        <module name="Neoenergia" />
+        <module name="base-project-web --" />
+        <module name="base-project-web - Funcionando - Copia" />
+        <module name="CPFL - PP" />
+        <module name="base-project-web - Funcionando" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
